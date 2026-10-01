@@ -16,6 +16,12 @@ import HeartPulse from "lucide-react/dist/esm/icons/heart-pulse";
 import Building2 from "lucide-react/dist/esm/icons/building-2";
 import UtensilsCrossed from "lucide-react/dist/esm/icons/utensils-crossed";
 import Boxes from "lucide-react/dist/esm/icons/boxes";
+import Warehouse from "lucide-react/dist/esm/icons/warehouse";
+import Store from "lucide-react/dist/esm/icons/store";
+import Stethoscope from "lucide-react/dist/esm/icons/stethoscope";
+import CarFront from "lucide-react/dist/esm/icons/car-front";
+import Headset from "lucide-react/dist/esm/icons/headset";
+import Bot from "lucide-react/dist/esm/icons/bot";
 import { useEffect, useRef, useState } from "react";
 
 import { Logo } from "@/components/brand/Logo";
@@ -27,10 +33,10 @@ type Panel = "services" | "products" | null;
 const menuDetails: Record<string, { icon: typeof Server; description: string }> = {
   "cloud-managed-vps-hosting": { icon: Server, description: "Fast hosting. Expert care. Room to grow." },
   "dedicated-remote-it-teams": { icon: Users, description: "The right tech talent, part of your team." },
-  "e-commerce-web-portals": { icon: ShoppingBag, description: "Connected stores and portals built to sell." },
+  "e-commerce-web-portals": { icon: ShoppingBag, description: "High-performance online stores built to sell and scale." },
   "web-development": { icon: CodeXml, description: "Standout websites built for your business." },
   "website-management-maintenance": { icon: ShieldCheck, description: "Keep your website secure and running smoothly." },
-  "brand-building": { icon: Palette, description: "Distinctive logos, designs and a brand people remember." },
+  "brand-building": { icon: Palette, description: "Secure custom portals that connect users, data, and business workflows." },
   "business-automation-erp": { icon: Workflow, description: "Simplify everyday work with connected systems." },
   "business-vps-hosting": { icon: Server, description: "A reliable home for your websites and apps." },
   "custom-erp": { icon: ShoppingBag, description: "Bring your store, sales and operations together." },
@@ -39,7 +45,24 @@ const menuDetails: Record<string, { icon: typeof Server; description: string }> 
   "hospital-management-system": { icon: HeartPulse, description: "Streamline patient care and daily operations." },
   "office-management-system": { icon: Building2, description: "Organize your people, tasks and office workflows." },
   "restaurant-management-system": { icon: UtensilsCrossed, description: "Keep orders, service and your kitchen in sync." },
+  "inventory-warehouse-management": { icon: Warehouse, description: "Track stock, warehouses, suppliers and inventory movements." },
+  "pos-retail-management": { icon: Store, description: "Manage retail sales, products, stock and daily operations." },
+  "real-estate-management": { icon: Building2, description: "Organize property listings, leads, enquiries and client records." },
+  "clinic-management": { icon: Stethoscope, description: "Coordinate appointments, patient records, billing and clinic workflows." },
+  "vehicle-dealership-management": { icon: CarFront, description: "Manage vehicle inventory, enquiries and dealership sales workflows." },
+  "customer-support-ticketing": { icon: Headset, description: "Organize customer issues, tickets, replies and resolutions." },
+  "ai-chatbot-call-centers": { icon: Bot, description: "Automate customer conversations and assist call center teams." },
 };
+
+const hiddenProductMenuSlugs = new Set([
+  "inventory-warehouse-management",
+  "pos-retail-management",
+  "real-estate-management",
+  "clinic-management",
+  "vehicle-dealership-management",
+  "customer-support-ticketing",
+  "restaurant-management-system",
+]);
 
 function MenuIcon({ slug }: { slug: string }) {
   const Icon = menuDetails[slug]?.icon ?? Boxes;
@@ -49,8 +72,18 @@ function MenuIcon({ slug }: { slug: string }) {
 function MegaMenu({ kind }: { kind: "services" | "products" }) {
   const isServices = kind === "services";
   const items = isServices
-    ? services.map((item) => ({ slug: item.slug, title: item.title }))
-    : products.map((item) => ({ slug: item.slug, title: item.name }));
+    ? services.map((item) => ({
+        slug: item.slug,
+        title:
+          item.slug === "e-commerce-web-portals"
+            ? "E-commerce Development"
+            : item.slug === "brand-building"
+              ? "Web Portal Development"
+              : item.title,
+      }))
+    : products
+        .filter((item) => !hiddenProductMenuSlugs.has(item.slug))
+        .map((item) => ({ slug: item.slug, title: item.name }));
 
   return (
     <>

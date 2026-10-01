@@ -17,6 +17,8 @@ import { Ambient3DBackground } from "@/components/background/Ambient3DBackground
 import { CustomCursor } from "@/components/cursor/CustomCursor";
 
 const GOOGLE_ANALYTICS_ID = "G-SPP811W81V";
+const GOOGLE_FONTS_STYLESHEET =
+  "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800;900&display=optional";
 
 function NotFoundComponent() {
   return (
@@ -110,10 +112,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap",
-      },
-      {
-        rel: "stylesheet",
         href: appCss,
       },
       {
@@ -141,6 +139,20 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <link
+          id="google-fonts-preload"
+          rel="preload"
+          as="style"
+          href={GOOGLE_FONTS_STYLESHEET}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { const link = document.getElementById('google-fonts-preload'); if (!link) return; const apply = () => { link.rel = 'stylesheet'; link.removeAttribute('as'); }; link.addEventListener('load', apply, { once: true }); if (link.sheet) apply(); })();`,
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={GOOGLE_FONTS_STYLESHEET} />
+        </noscript>
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}

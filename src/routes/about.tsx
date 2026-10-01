@@ -163,24 +163,7 @@ function AboutPage() {
             className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
             childSelector="[data-card]"
           >
-            {[
-              ...process,
-              {
-                step: "05",
-                title: "Test",
-                body: "We validate usability, accessibility, performance, and reliability before release.",
-              },
-              {
-                step: "06",
-                title: "Optimize",
-                body: "We refine the experience using practical feedback and performance evidence.",
-              },
-              {
-                step: "07",
-                title: "Launch & Support",
-                body: "We deploy carefully, monitor the result, and remain available as needs evolve.",
-              },
-            ].map((item) => (
+            {process.map((item) => (
               <article key={item.step} data-card className="panel rounded-2xl p-6">
                 <span className="font-display text-3xl font-semibold text-primary/70">
                   {item.step}

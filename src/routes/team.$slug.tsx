@@ -32,7 +32,7 @@ const profiles: Record<string, LeadershipProfile> = {
       "He established WebHelp to help businesses use practical digital solutions to improve growth, efficiency and innovation. His work spans web platforms, hosting, enterprise applications, integrations, technology strategy and long-term client support.",
       "His leadership approach begins with understanding each client's operating needs and shaping responsible, measurable solutions around them.",
     ],
-    highlights: [{ value: "24+", label: "Years of IT industry experience" }, { value: "2019", label: "WebHelp Pakistan founded" }, { value: "Global", label: "Business and technology perspective" }],
+    highlights: [{ value: "10+", label: "Years of IT industry experience" }, { value: "2019", label: "WebHelp Pakistan founded" }, { value: "Global", label: "Business and technology perspective" }],
     skills: ["IT Strategy", "Web Development", "Team Leadership", "IT Consulting", "Cloud Solutions", "Project Management", "Client Relations"],
   },
   "umaira-ashfaq": {

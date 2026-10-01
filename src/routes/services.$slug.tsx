@@ -6,6 +6,7 @@ import Check from "lucide-react/dist/esm/icons/check";
 import { Reveal } from "@/components/Reveal";
 import { ClientVisual } from "@/components/three/ClientVisual";
 import { services } from "@/lib/site";
+import { servicesPageAdditions } from "@/lib/services-page-additions";
 
 /* Dedicated service page components */
 import { WebDevelopmentPage } from "@/components/services/WebDevelopmentPage";
@@ -62,7 +63,9 @@ const seoMeta: Record<string, { title: string; description: string }> = {
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
     if (params.slug === "business-automation-erp") throw redirect({ to: "/products/$slug", params: { slug: params.slug }, statusCode: 301 });
-    const service = services.find((s) => s.slug === params.slug);
+    const service =
+      services.find((s) => s.slug === params.slug) ??
+      servicesPageAdditions.find((s) => s.slug === params.slug);
     if (!service) throw notFound();
     return { service };
   },

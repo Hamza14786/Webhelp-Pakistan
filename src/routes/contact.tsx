@@ -52,7 +52,7 @@ const options = [
   "Hosting",
   "AI Integration",
   "Dedicated Development Team",
-  "Brand Building",
+  "Brand Development",
   "Other",
 ].map((label) => ({
   value: label

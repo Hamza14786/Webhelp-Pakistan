@@ -22,7 +22,15 @@ const description =
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    links: [{ rel: "preload", as: "image", href: "/images/hero-office-reference.jpg" }],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        imageSrcSet: "/images/hero-office-768.avif 768w, /images/hero-office-1600.avif 1600w",
+        imageSizes: "100vw",
+        type: "image/avif",
+      },
+    ],
     meta: [
       { title },
       { name: "description", content: description },
@@ -37,16 +45,22 @@ function Home() {
   return (
     <>
       <section data-site-hero className="home-tech-hero relative overflow-hidden">
-        <img
-          src="/images/hero-office-reference.jpg"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          width={1915}
-          height={821}
-          decoding="async"
-          className="home-tech-hero-background"
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcSet="/images/hero-office-768.avif 768w, /images/hero-office-1600.avif 1600w"
+            sizes="100vw"
+          />
+          <img
+            src="/images/hero-office-reference.jpg"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            width={1915}
+            height={821}
+            className="home-tech-hero-background"
+          />
+        </picture>
         <div
           className="home-tech-hero-overlay pointer-events-none absolute inset-0"
           aria-hidden="true"
@@ -131,7 +145,7 @@ function Home() {
             </Reveal>
             <Reveal className="flex flex-col justify-center">
               <p className="text-xl leading-[1.65] text-[#173946] sm:text-2xl">
-                Founded in 2019 and backed by 24+ years of IT industry experience, Webhelp Pakistan
+                Founded in 2019 and backed by 10+ years of IT industry experience, Webhelp Pakistan
                 delivers websites, managed IT support, hosting, ecommerce, automation, and dedicated
                 remote technical teams.
               </p>

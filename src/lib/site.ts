@@ -118,7 +118,7 @@ export const services: Service[] = [
   },
   {
     slug: "brand-building",
-    title: "Brand Building",
+    title: "Brand Development",
     summary: "Build a recognizable brand with a clear strategy, distinctive logo, visual identity, marketing designs, and realistic mockups for digital and print.",
     homeSummary: "Brand strategy, logos, visual identities, creative designs, and mockups that bring your business to life.",
     outcomes: ["A clear identity shaped around your audience", "Consistent design across digital and print", "Practical brand assets your team can use"],
@@ -227,7 +227,7 @@ export const products: Product[] = [
   },
   {
     slug: "fuel-station-automation",
-    name: "Fuel Station",
+    name: "Fuel Station Configuration",
     category: "Operational automation",
     pitch: "Improve fuel station visibility with connected operational workflows.",
     description:
@@ -361,28 +361,183 @@ export const products: Product[] = [
     stats: [{ label: "Approach", value: "Custom" }, { label: "Workflows", value: "Connected" }, { label: "Support", value: "Available" }],
     status: "Available",
   },
+  {
+    slug: "inventory-warehouse-management",
+    name: "Inventory & Warehouse Management System",
+    category: "Inventory operations",
+    pitch: "Track stock, warehouses, suppliers, purchases, transfers, and inventory movements from one system.",
+    description:
+      "Track stock, warehouses, suppliers, purchases, transfers, and inventory movements from one system.",
+    features: [
+      { title: "Stock tracking", body: "Organize product quantities and inventory movement records." },
+      { title: "Warehouse management", body: "Maintain warehouse records and transfers between locations." },
+      { title: "Purchases & suppliers", body: "Keep purchase and supplier information connected with inventory workflows." },
+      { title: "Inventory visibility", body: "Review stock information and movement records from a central system." },
+    ],
+    stats: [
+      { label: "Focus", value: "Inventory" },
+      { label: "Locations", value: "Warehouses" },
+      { label: "Workflow", value: "Connected" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "pos-retail-management",
+    name: "POS & Retail Management System",
+    category: "Retail operations",
+    pitch: "Manage sales, billing, products, stock, customers, and daily retail operations.",
+    description:
+      "Manage sales, billing, products, stock, customers, and daily retail operations.",
+    features: [
+      { title: "Sales & billing", body: "Manage point-of-sale transactions and billing workflows." },
+      { title: "Product management", body: "Keep retail products and related information organized." },
+      { title: "Stock visibility", body: "Connect sales activity with relevant stock records." },
+      { title: "Customer records", body: "Maintain customer information alongside retail operations." },
+    ],
+    stats: [
+      { label: "Focus", value: "Retail" },
+      { label: "Operations", value: "Daily sales" },
+      { label: "Workflow", value: "Connected" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "real-estate-management",
+    name: "Real Estate Management System",
+    category: "Property operations",
+    pitch: "Manage properties, listings, leads, agents, enquiries, bookings, and client records.",
+    description:
+      "Manage properties, listings, leads, agents, enquiries, bookings, and client records.",
+    features: [
+      { title: "Properties & listings", body: "Organize property information and active listings." },
+      { title: "Leads & enquiries", body: "Keep prospective client enquiries and lead information together." },
+      { title: "Agent coordination", body: "Maintain agent records and related property workflows." },
+      { title: "Bookings & clients", body: "Connect booking details with relevant client records." },
+    ],
+    stats: [
+      { label: "Focus", value: "Property" },
+      { label: "Records", value: "Centralized" },
+      { label: "Workflow", value: "Configurable" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "clinic-management",
+    name: "Clinic Management System",
+    category: "Healthcare operations",
+    pitch: "Manage appointments, patients, doctors, billing, treatment records, and daily clinic operations.",
+    description:
+      "Manage appointments, patients, doctors, billing, treatment records, and daily clinic operations.",
+    features: [
+      { title: "Appointments", body: "Organize appointment scheduling and related clinic workflows." },
+      { title: "Patient records", body: "Maintain relevant patient and treatment records." },
+      { title: "Doctors & services", body: "Connect doctor information with appropriate clinic services." },
+      { title: "Billing & operations", body: "Manage billing records and other daily operational information." },
+    ],
+    stats: [
+      { label: "Focus", value: "Clinics" },
+      { label: "Access", value: "Role-based" },
+      { label: "Workflow", value: "Configurable" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "vehicle-dealership-management",
+    name: "Vehicle Dealership Management System",
+    category: "Automotive operations",
+    pitch: "Manage vehicle inventory, enquiries, customers, sales, finance leads, and dealership workflows.",
+    description:
+      "Manage vehicle inventory, enquiries, customers, sales, finance leads, and dealership workflows.",
+    features: [
+      { title: "Vehicle inventory", body: "Organize vehicle records and dealership inventory information." },
+      { title: "Enquiries & customers", body: "Maintain prospective buyer enquiries and customer records." },
+      { title: "Sales workflows", body: "Manage vehicle sales information through a structured workflow." },
+      { title: "Finance leads", body: "Keep finance lead details connected with relevant dealership records." },
+    ],
+    stats: [
+      { label: "Focus", value: "Dealerships" },
+      { label: "Records", value: "Vehicles" },
+      { label: "Workflow", value: "Connected" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "customer-support-ticketing",
+    name: "Customer Support & Ticketing System",
+    category: "Customer support",
+    pitch: "Manage customer issues, support tickets, priorities, departments, replies, and resolution tracking.",
+    description:
+      "Manage customer issues, support tickets, priorities, departments, replies, and resolution tracking.",
+    features: [
+      { title: "Support tickets", body: "Record customer issues and keep related replies together." },
+      { title: "Priorities & departments", body: "Organize tickets by priority and responsible department." },
+      { title: "Resolution tracking", body: "Follow ticket progress through to resolution." },
+      { title: "Customer communication", body: "Maintain a clearer record of support conversations and responses." },
+    ],
+    stats: [
+      { label: "Focus", value: "Support" },
+      { label: "Tracking", value: "Tickets" },
+      { label: "Workflow", value: "Resolution" },
+    ],
+    status: "Available",
+  },
+  {
+    slug: "ai-chatbot-call-centers",
+    name: "AI Chatbot for Call Centers",
+    category: "AI CUSTOMER SERVICE",
+    pitch: "Automate customer conversations, answer common questions, assist agents, and handle high-volume support across voice and chat channels.",
+    description:
+      "Automate customer conversations, answer common questions, assist agents, and handle high-volume support across voice and chat channels.",
+    features: [
+      { title: "Customer conversations", body: "Automate customer conversations across voice and chat channels." },
+      { title: "Common questions", body: "Help answer common customer questions." },
+      { title: "Agent assistance", body: "Assist call center agents during customer support workflows." },
+      { title: "High-volume support", body: "Support high-volume customer service conversations across voice and chat." },
+    ],
+    stats: [
+      { label: "Focus", value: "Customer Assistance" },
+      { label: "Tracking", value: "Calls & Chats" },
+      { label: "Workflow", value: "Smart Routing" },
+    ],
+    status: "Available",
+  },
 ];
 
 export const process = [
   {
     step: "01",
     title: "Discover",
-    body: "We collect requirements, user needs, technical constraints, priorities, and risks.",
+    body: "We collect requirements, business goals, user needs, technical constraints, priorities, and risks.",
   },
   {
     step: "02",
-    title: "Define",
-    body: "We recommend scope, technology, architecture, resources, milestones, and the support model.",
+    title: "Define & Plan",
+    body: "We define the scope, recommended technology, architecture, milestones, resources, timeline, and support model.",
   },
   {
     step: "03",
-    title: "Build",
-    body: "We organize access and infrastructure, then move through design, development, QA, review, and controlled deployment.",
+    title: "Design",
+    body: "We plan the user experience, interface structure, page flows, and visual direction before development begins.",
   },
   {
     step: "04",
-    title: "Support & improve",
-    body: "After launch, we can continue with monitoring, maintenance, performance work, SEO support, reporting, or new features.",
+    title: "Build",
+    body: "We develop the approved solution, configure required systems, integrations, infrastructure, and functionality.",
+  },
+  {
+    step: "05",
+    title: "Test & Review",
+    body: "We validate functionality, usability, responsiveness, accessibility, performance, security, and reliability before release.",
+  },
+  {
+    step: "06",
+    title: "Optimize",
+    body: "We refine the product based on testing results, feedback, performance data, and final quality checks.",
+  },
+  {
+    step: "07",
+    title: "Launch & Support",
+    body: "We deploy carefully, monitor the live system, resolve post-launch issues, and provide ongoing maintenance, improvements, SEO support, reporting, or future features.",
   },
 ];
 export const team = [

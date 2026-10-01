@@ -1,0 +1,77 @@
+import type { Service } from "@/lib/site";
+
+/** Services shown on the Services page without adding them to shared navigation. */
+export const servicesPageAdditions: Service[] = [
+  {
+    slug: "website-development",
+    title: "Website Development",
+    summary: "Modern, responsive and high-performance websites built around your business goals.",
+    homeSummary: "Modern, responsive and high-performance websites built around your business goals.",
+    outcomes: ["Modern website experiences", "Responsive layouts", "Business-goal alignment"],
+    deliverables: ["Website structure", "Responsive pages", "Performance-focused implementation"],
+  },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    summary: "Android and iOS applications designed for customers, teams and business operations.",
+    homeSummary: "Android and iOS applications designed for customers, teams and business operations.",
+    outcomes: ["Android applications", "iOS applications", "Customer and team workflows"],
+    deliverables: ["Application planning", "Mobile app implementation", "Business workflow alignment"],
+  },
+  {
+    slug: "seo-search-visibility",
+    title: "SEO & Search Visibility",
+    summary: "Technical SEO, on-page optimization, content improvements and search performance growth.",
+    homeSummary: "Technical SEO, on-page optimization, content improvements and search performance growth.",
+    outcomes: ["Technical SEO", "On-page optimization", "Content improvements and search performance growth"],
+    deliverables: ["Technical SEO improvements", "On-page optimization", "Content recommendations"],
+  },
+  {
+    slug: "digital-marketing",
+    title: "Digital Marketing",
+    summary: "Data-driven digital campaigns designed to improve visibility, engagement, leads and conversions.",
+    homeSummary: "Data-driven digital campaigns designed to improve visibility, engagement, leads and conversions.",
+    outcomes: ["Improve visibility", "Increase engagement", "Support leads and conversions"],
+    deliverables: ["Campaign planning", "Digital campaign execution", "Performance review"],
+  },
+  {
+    slug: "ui-ux-design",
+    title: "UI/UX Design",
+    summary: "User-friendly interfaces and digital experiences designed around usability and conversions.",
+    homeSummary: "User-friendly interfaces and digital experiences designed around usability and conversions.",
+    outcomes: ["User-friendly interfaces", "Usability-focused experiences", "Conversion-aware design"],
+    deliverables: ["Interface structure", "User experience design", "Digital experience direction"],
+  },
+  {
+    slug: "custom-software-development",
+    title: "Custom Software Development",
+    summary: "Tailored business systems, internal tools, portals and automation solutions.",
+    homeSummary: "Tailored business systems, internal tools, portals and automation solutions.",
+    outcomes: ["Tailored business systems", "Internal tools and portals", "Automation solutions"],
+    deliverables: ["Requirements-aligned software", "Internal tools or portals", "Workflow automation"],
+  },
+  {
+    slug: "wordpress-development",
+    title: "WordPress Development",
+    summary: "Custom WordPress websites, WooCommerce stores, redesigns, optimization and maintenance.",
+    homeSummary: "Custom WordPress websites, WooCommerce stores, redesigns, optimization and maintenance.",
+    outcomes: ["Custom WordPress websites", "WooCommerce stores", "Redesigns, optimization and maintenance"],
+    deliverables: ["WordPress website development", "WooCommerce store development", "Optimization and maintenance"],
+  },
+  {
+    slug: "website-redesign-modernization",
+    title: "Website Redesign & Modernization",
+    summary: "Upgrade outdated websites with better design, performance, responsiveness and user experience.",
+    homeSummary: "Upgrade outdated websites with better design, performance, responsiveness and user experience.",
+    outcomes: ["Updated website design", "Improved performance and responsiveness", "Better user experience"],
+    deliverables: ["Website review", "Modernized design", "Responsive and performance improvements"],
+  },
+  {
+    slug: "software-maintenance-support",
+    title: "Software Maintenance & Support",
+    summary: "Ongoing bug fixes, updates, improvements, monitoring and technical support.",
+    homeSummary: "Ongoing bug fixes, updates, improvements, monitoring and technical support.",
+    outcomes: ["Bug fixes and updates", "Ongoing improvements", "Monitoring and technical support"],
+    deliverables: ["Maintenance updates", "Issue resolution", "Monitoring and technical support"],
+  },
+];

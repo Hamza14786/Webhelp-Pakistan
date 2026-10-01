@@ -1,0 +1,249 @@
+.services-hero-animation {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 34vw, 430px);
+  overflow: hidden;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  z-index: 2;
+  isolation: isolate;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 82%, transparent 100%);
+}
+
+.services-hero-animation__glow {
+  position: absolute;
+  inset: 14% 2%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 145, 220, 0.2), rgba(0, 85, 145, 0.08) 42%, transparent 72%);
+  filter: blur(18px);
+}
+
+.services-flight-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(92%, 420px);
+  min-height: 112px;
+  padding: 20px 22px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 190, 255, 0.35);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(9, 33, 54, 0.94), rgba(3, 14, 27, 0.97));
+  box-shadow: 0 24px 70px -28px rgba(0, 152, 235, 0.65), inset 0 1px 0 rgba(180, 230, 255, 0.09);
+  transform-style: preserve-3d;
+  opacity: 0;
+  filter: blur(8px);
+  animation: services-card-flight 30s cubic-bezier(0.22, 1, 0.36, 1) infinite both;
+  animation-delay: var(--service-delay);
+  will-change: transform, opacity, filter;
+}
+
+.services-hero-animation--15 .services-flight-card {
+  animation-name: services-card-flight-15;
+  animation-duration: 37.5s;
+}
+
+.services-flight-card::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 18%, rgba(75, 191, 255, 0.09) 50%, transparent 78%);
+  content: "";
+  pointer-events: none;
+}
+
+.services-flight-card__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border: 1px solid rgba(59, 185, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(0, 144, 220, 0.13);
+  color: #64ceff;
+  transform: translateZ(24px);
+}
+
+.services-flight-card__copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  transform: translateZ(18px);
+}
+
+.services-flight-card__category {
+  color: #63caff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.services-flight-card__title {
+  color: #f3f8fc;
+  font-size: clamp(14px, 1.25vw, 17px);
+  font-weight: 650;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.services-flight-card__signal {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #39c7ff;
+  box-shadow: 0 0 16px rgba(57, 199, 255, 0.9);
+  transform: translateZ(16px);
+}
+
+@keyframes services-card-flight {
+  0% {
+    z-index: 4;
+    opacity: 0;
+    filter: blur(9px);
+    transform: translate3d(128%, 34px, -220px) rotateX(17deg) rotateY(-30deg) rotateZ(5deg) scale(0.68);
+  }
+  4% {
+    z-index: 12;
+    opacity: 0.35;
+    filter: blur(4px);
+    transform: translate3d(100%, 23px, -150px) rotateX(13deg) rotateY(-24deg) rotateZ(4deg) scale(0.76);
+  }
+  4.5% {
+    z-index: 14;
+    opacity: 0.88;
+    filter: blur(1px);
+    transform: translate3d(48%, 8px, -55px) rotateX(7deg) rotateY(-14deg) rotateZ(2deg) scale(0.91);
+  }
+  6% {
+    z-index: 14;
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(-2%, -4px, 55px) rotateX(2deg) rotateY(-5deg) rotateZ(-1deg) scale(1.02);
+  }
+  8.333% {
+    z-index: 14;
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(-2%, -4px, 55px) rotateX(2deg) rotateY(-5deg) rotateZ(-1deg) scale(1.02);
+  }
+  10.5% {
+    z-index: 5;
+    opacity: 0.84;
+    filter: blur(2px);
+    transform: translate3d(-46%, -12px, -10px) rotateX(-5deg) rotateY(11deg) rotateZ(-3deg) scale(0.92);
+  }
+  13.5% {
+    z-index: 1;
+    opacity: 0.34;
+    filter: blur(7px);
+    transform: translate3d(-112%, -20px, -125px) rotateX(-9deg) rotateY(20deg) rotateZ(-5deg) scale(0.8);
+  }
+  16.667% {
+    z-index: 0;
+    opacity: 0;
+    filter: blur(16px);
+    transform: translate3d(-155%, -25px, -230px) rotateX(-12deg) rotateY(26deg) rotateZ(-6deg) scale(0.7);
+  }
+  100% {
+    z-index: 0;
+    opacity: 0;
+    filter: blur(16px);
+    transform: translate3d(-155%, -25px, -230px) rotateX(-12deg) rotateY(26deg) rotateZ(-6deg) scale(0.7);
+  }
+}
+
+@keyframes services-card-flight-15 {
+  0% {
+    z-index: 4;
+    opacity: 0;
+    filter: blur(9px);
+    transform: translate3d(128%, 34px, -220px) rotateX(17deg) rotateY(-30deg) rotateZ(5deg) scale(0.68);
+  }
+  2% {
+    z-index: 12;
+    opacity: 0.35;
+    filter: blur(4px);
+    transform: translate3d(100%, 23px, -150px) rotateX(13deg) rotateY(-24deg) rotateZ(4deg) scale(0.76);
+  }
+  3.2% {
+    z-index: 14;
+    opacity: 0.88;
+    filter: blur(1px);
+    transform: translate3d(48%, 8px, -55px) rotateX(7deg) rotateY(-14deg) rotateZ(2deg) scale(0.91);
+  }
+  4.8%,
+  6.667% {
+    z-index: 14;
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(-2%, -4px, 55px) rotateX(2deg) rotateY(-5deg) rotateZ(-1deg) scale(1.02);
+  }
+  8.4% {
+    z-index: 5;
+    opacity: 0.84;
+    filter: blur(2px);
+    transform: translate3d(-46%, -12px, -10px) rotateX(-5deg) rotateY(11deg) rotateZ(-3deg) scale(0.92);
+  }
+  10.8% {
+    z-index: 1;
+    opacity: 0.34;
+    filter: blur(7px);
+    transform: translate3d(-112%, -20px, -125px) rotateX(-9deg) rotateY(20deg) rotateZ(-5deg) scale(0.8);
+  }
+  13.333%,
+  100% {
+    z-index: 0;
+    opacity: 0;
+    filter: blur(16px);
+    transform: translate3d(-155%, -25px, -230px) rotateX(-12deg) rotateY(26deg) rotateZ(-6deg) scale(0.7);
+  }
+}
+
+@media (max-width: 767px) {
+  .services-hero-animation {
+    height: 240px;
+    margin-top: 8px;
+  }
+
+  .services-flight-card {
+    width: min(88%, 370px);
+    min-height: 96px;
+    padding: 15px 17px;
+  }
+
+  .services-flight-card__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .services-hero-animation {
+    height: 320px;
+  }
+
+  .services-flight-card {
+    width: 94%;
+    padding: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-flight-card {
+    animation: none;
+    filter: none;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .services-flight-card:first-of-type {
+    opacity: 1;
+  }
+}

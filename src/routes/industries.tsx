@@ -48,12 +48,24 @@ const industries = [
     "Workflow, portal, integration, infrastructure, and support solutions for distributed operations and delivery teams.",
   ],
   [
-    "Healthcare & Care Services",
+    "Healthcare & Care",
     "Secure, accessible digital experiences and operational systems suited to service delivery and controlled access.",
   ],
   [
     "Manufacturing & Automation",
     "ERP, reporting, inventory visibility, connected workflows, infrastructure, and managed technical support.",
+  ],
+  [
+    "Real Estate & Property Management",
+    "Property websites, listing management, enquiry capture, tenant communication, and operational workflows for real estate teams.",
+  ],
+  [
+    "Travel, Tourism & Hospitality",
+    "Customer-focused websites, booking and enquiry journeys, service information, and connected workflows for travel and hospitality businesses.",
+  ],
+  [
+    "Legal & Consultancy Services",
+    "Professional websites, client enquiry and appointment journeys, secure information handling, and organized workflows for legal and consultancy teams.",
   ],
 ];
 

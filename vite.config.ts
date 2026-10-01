@@ -16,6 +16,17 @@ export default defineConfig({
   // cPanel's Node.js application manager runs the generated Nitro Node server.
   nitro: {
     preset: "node-server",
+    routeRules: {
+      "/assets/**": {
+        headers: { "cache-control": "public, max-age=31536000, immutable" },
+      },
+      "/images/**": {
+        headers: { "cache-control": "public, max-age=2592000, stale-while-revalidate=86400" },
+      },
+      "/animations/**": {
+        headers: { "cache-control": "public, max-age=2592000, stale-while-revalidate=86400" },
+      },
+    },
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).

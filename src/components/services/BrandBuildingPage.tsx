@@ -29,7 +29,7 @@ export function BrandBuildingPage() {
   return (
     <>
       <ServiceHero
-        eyebrow="Brand Building"
+        eyebrow="Brand Development"
         title="A Brand People Recognize. A Story They Remember."
         lead="We turn your business story into a clear, distinctive visual identity. From strategy and logo design to marketing creatives and realistic mockups, we help your brand look consistent wherever customers meet it."
         ctaText="Let's Build Your Brand"

@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { ClientVisual } from "@/components/three/ClientVisual";
 import { FlexibleVpsPackages } from "@/components/vps/FlexibleVpsPackages";
 import { VpsBenefitsCard } from "@/components/vps/VpsBenefitsCard";
+import { ProductContent } from "@/components/products/ProductContent";
 import { products } from "@/lib/site";
 
 export const Route = createFileRoute("/products/$slug")({
@@ -65,6 +66,9 @@ function ProductNotFound() {
 function ProductDetail() {
   const { product } = Route.useLoaderData();
   if (product.slug === "business-automation-erp") return <AutomationErpPage />;
+  if (["custom-erp", "fuel-station-automation", "school-management-system", "hospital-management-system", "office-management-system", "restaurant-management-system"].includes(product.slug)) {
+    return <ProductContent slug={product.slug} />;
+  }
   const isVps = product.slug === "business-vps-hosting";
   const others = products.filter((p) => p.slug !== product.slug);
   const detailTitle = product.detailTitle ?? product.name;
