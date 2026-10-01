@@ -1,0 +1,332 @@
+/* ==========================================================================
+   VPS Hosting Benefits - Single Large Premium Card Component
+   Theme: Dark / Cyan (#031119, #25d2dd, #1288d3) Glassmorphism
+   ========================================================================== */
+
+.vps-benefits-section {
+  position: relative;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.vps-benefits-container {
+  width: min(1280px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header
+   -------------------------------------------------------------------------- */
+.vps-benefits-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 52px;
+}
+
+.vps-benefits-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 1px solid rgba(37, 210, 221, 0.4);
+  background: rgba(6, 27, 36, 0.75);
+  backdrop-filter: blur(12px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #25d2dd;
+  box-shadow: 0 0 20px rgba(37, 210, 221, 0.2);
+  margin-bottom: 20px;
+}
+
+.vps-benefits-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.vps-benefits-lead {
+  font-size: 1.06rem;
+  line-height: 1.65;
+  color: #8ea3ad;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Single Large Premium Card
+   -------------------------------------------------------------------------- */
+.vps-premium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 48px 44px;
+  background:
+    radial-gradient(ellipse at 85% 12%, rgba(37, 210, 221, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 88%, rgba(18, 136, 211, 0.08) 0%, transparent 55%),
+    rgba(6, 27, 36, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(37, 210, 221, 0.26);
+  box-shadow:
+    0 30px 80px -20px rgba(0, 0, 0, 0.75),
+    0 0 35px -5px rgba(37, 210, 221, 0.16);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.vps-premium-card:hover {
+  border-color: rgba(37, 210, 221, 0.5);
+  box-shadow:
+    0 35px 100px -20px rgba(0, 0, 0, 0.85),
+    0 0 55px -5px rgba(37, 210, 221, 0.28);
+}
+
+.vps-premium-card__glow-top {
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 210, 221, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vps-premium-card__glow-bottom {
+  position: absolute;
+  bottom: -100px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(18, 136, 211, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Card Inner Header
+   -------------------------------------------------------------------------- */
+.vps-premium-card__header {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 32px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid rgba(37, 210, 221, 0.15);
+}
+
+.vps-premium-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.vps-premium-card__pill {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(37, 210, 221, 0.12);
+  border: 1px solid rgba(37, 210, 221, 0.3);
+  color: #25d2dd;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vps-premium-card__spec {
+  color: #8ea3ad;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.vps-premium-card__summary {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c4d6df;
+  max-width: 820px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2-Column Desktop / 1-Column Mobile Benefits Grid
+   -------------------------------------------------------------------------- */
+.vps-benefits-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .vps-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 48px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Individual Benefit Item inside the Single Card
+   -------------------------------------------------------------------------- */
+.vps-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease;
+}
+
+.vps-benefit-item:hover {
+  background: rgba(37, 210, 221, 0.06);
+  border-color: rgba(37, 210, 221, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.vps-benefit-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 136, 211, 0.15);
+  border: 1px solid rgba(37, 210, 221, 0.32);
+  color: #25d2dd;
+  box-shadow: 0 0 16px rgba(37, 210, 221, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vps-benefit-item:hover .vps-benefit-icon-wrapper {
+  background: #25d2dd;
+  color: #031119;
+  border-color: #25d2dd;
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 24px rgba(37, 210, 221, 0.55);
+}
+
+.vps-benefit-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+.vps-benefit-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.vps-benefit-heading {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.vps-benefit-item:hover .vps-benefit-heading {
+  color: #25d2dd;
+}
+
+.vps-benefit-desc {
+  margin: 7px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #8ea3ad;
+  transition: color 0.2s ease;
+}
+
+.vps-benefit-item:hover .vps-benefit-desc {
+  color: #c4d6df;
+}
+
+/* --------------------------------------------------------------------------
+   Card Bottom Specs Strip
+   -------------------------------------------------------------------------- */
+.vps-premium-card__footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(37, 210, 221, 0.15);
+}
+
+.vps-spec-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #8ea3ad;
+}
+
+.vps-spec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #25d2dd;
+  box-shadow: 0 0 10px #25d2dd;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsiveness
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .vps-benefits-section {
+    padding: 60px 0 80px;
+  }
+
+  .vps-premium-card {
+    padding: 32px 20px;
+    border-radius: 20px;
+  }
+
+  .vps-benefit-item {
+    padding: 12px 8px;
+    gap: 14px;
+  }
+
+  .vps-benefit-icon-wrapper {
+    width: 42px;
+    height: 42px;
+  }
+
+  .vps-benefit-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .vps-benefit-heading {
+    font-size: 1.05rem;
+  }
+
+  .vps-premium-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

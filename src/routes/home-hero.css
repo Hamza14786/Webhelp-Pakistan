@@ -1,0 +1,99 @@
+.home-tech-hero {
+  background: #02131e;
+}
+
+.home-tech-hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  pointer-events: none;
+}
+
+.home-tech-hero-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),
+    linear-gradient(90deg, rgba(0, 16, 26, 0.4), rgba(0, 19, 31, 0.16) 60%, rgba(0, 16, 26, 0.24)),
+    linear-gradient(0deg, rgba(0, 14, 23, 0.72), transparent 30%);
+}
+
+.home-tech-hero-layout {
+  max-width: 1920px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(32px, 4vw, 80px);
+  padding: clamp(70px, 6vw, 112px) clamp(32px, 4.7vw, 90px) 72px;
+  min-height: 780px;
+}
+
+.home-tech-hero-title {
+  font-size: clamp(48px, 4.6vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  color: #f5fbff;
+  text-shadow: 0 2px 24px rgba(0, 10, 20, 0.25);
+}
+
+.home-tech-hero-title .text-primary {
+  color: #009ee8;
+}
+
+.home-tech-hero-description {
+  max-width: 850px;
+  font-size: clamp(17px, 1.22vw, 23px);
+  line-height: 1.65;
+  color: #d4e4ee;
+}
+
+.home-tech-hero-visual {
+  align-self: start;
+  margin-top: -32px;
+}
+
+.home-tech-hero-animation {
+  height: clamp(540px, 36vw, 690px);
+  max-width: 600px;
+}
+
+@media (max-width: 1023px) {
+  .home-tech-hero-layout {
+    grid-template-columns: 1fr;
+    padding: 64px 24px;
+    gap: 40px;
+    min-height: 0;
+  }
+
+  .home-tech-hero-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
+      linear-gradient(180deg, rgba(0, 16, 26, 0.72), rgba(0, 16, 26, 0.48));
+  }
+
+  .home-tech-hero-title {
+    max-width: 760px;
+    font-size: clamp(38px, 6.4vw, 64px);
+  }
+
+  .home-tech-hero-visual {
+    margin-top: 0;
+  }
+
+  .home-tech-hero-animation {
+    height: 520px;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-tech-hero-layout {
+    padding: 52px 16px;
+  }
+
+  .home-tech-hero-animation {
+    height: 460px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-tech-hero-visual {
+    display: none;
+  }
+}

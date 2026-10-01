@@ -1,0 +1,541 @@
+/* ============================================================
+   Service Pages — Shared Styles
+   Premium dark-glass card system, process timelines, CTA sections
+   ============================================================ */
+
+/* ---- Card base ---- */
+.svc-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2rem;
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+  overflow: hidden;
+}
+
+/* Light-sweep pseudo */
+.svc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgba(0, 170, 255, 0.06) 48%,
+    rgba(0, 170, 255, 0.03) 56%,
+    transparent 66%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 170, 255, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 120, 255, 0.08);
+}
+
+.svc-card:hover::before {
+  opacity: 1;
+}
+
+/* ---- Card icon ---- */
+.svc-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 140, 255, 0.08);
+  color: #1288d3;
+  transition:
+    filter 350ms ease,
+    background 350ms ease;
+  flex-shrink: 0;
+}
+
+.svc-card:hover .svc-card-icon {
+  filter: drop-shadow(0 0 8px rgba(0, 170, 255, 0.5));
+  background: rgba(0, 140, 255, 0.14);
+}
+
+/* ---- Card content ---- */
+.svc-card-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+  transition: transform 300ms ease;
+}
+
+.svc-card:hover .svc-card-title {
+  transform: translateX(2px);
+}
+
+.svc-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+  margin-top: 0.625rem;
+}
+
+/* ---- Compact card variant (benefit cards) ---- */
+.svc-card-compact {
+  padding: 1.5rem;
+}
+
+.svc-card-compact .svc-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.svc-card-compact .svc-card-title {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* ---- Numbered card (steps, ecosystem) ---- */
+.svc-card-number {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1288d3;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+/* ---- Decorative top line on card ---- */
+.svc-card-line {
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, #1288d3, transparent);
+  border-radius: 1px;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   Process Timeline
+   ============================================================ */
+.svc-timeline {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+
+.svc-timeline-step {
+  flex: 1;
+  position: relative;
+  padding: 0 0.75rem;
+  text-align: center;
+}
+
+/* Connector line between steps */
+.svc-timeline-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -2px;
+  width: calc(100%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 136, 211, 0.5),
+    rgba(18, 136, 211, 0.15)
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.svc-timeline-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 140, 255, 0.1);
+  border: 2px solid rgba(18, 136, 211, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1288d3;
+  transition:
+    background 350ms ease,
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.svc-timeline-step:hover .svc-timeline-dot {
+  background: rgba(0, 140, 255, 0.2);
+  border-color: rgba(18, 136, 211, 0.7);
+  box-shadow: 0 0 16px rgba(0, 170, 255, 0.3);
+}
+
+.svc-timeline-label {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.svc-timeline-desc {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+  margin-top: 0.375rem;
+}
+
+/* ---- Vertical timeline (mobile) ---- */
+@media (max-width: 768px) {
+  .svc-timeline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .svc-timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0 0 1.5rem 0;
+    text-align: left;
+  }
+
+  .svc-timeline-step:not(:last-child)::after {
+    top: 40px;
+    right: auto;
+    left: 19px;
+    width: 1px;
+    height: calc(100% - 20px);
+    background: linear-gradient(
+      180deg,
+      rgba(18, 136, 211, 0.5),
+      rgba(18, 136, 211, 0.1)
+    );
+  }
+
+  .svc-timeline-dot {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .svc-timeline-label {
+    margin-top: 0;
+  }
+
+  .svc-timeline-desc {
+    margin-top: 0.25rem;
+  }
+}
+
+/* ============================================================
+   CTA Section
+   ============================================================ */
+.svc-cta {
+  position: relative;
+  padding: 5rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.svc-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    rgba(0, 140, 255, 0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.svc-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.svc-cta-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+  max-width: 480px;
+  margin: 1rem auto 0;
+  position: relative;
+}
+
+/* ============================================================
+   Section background decoration
+   ============================================================ */
+.svc-bg-glow {
+  position: relative;
+}
+
+.svc-bg-glow::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -15%;
+  width: clamp(20rem, 40vw, 50rem);
+  height: clamp(16rem, 30vw, 36rem);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 140, 255, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svc-bg-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Alternate glow position */
+.svc-bg-glow-left::after {
+  right: auto;
+  left: -15%;
+  top: 10%;
+}
+
+/* ============================================================
+   Problem ↔ Solution two-column
+   ============================================================ */
+.svc-problem-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--muted-foreground);
+}
+
+.svc-problem-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   Ecosystem hub layout (Odoo page)
+   ============================================================ */
+.svc-ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .svc-ecosystem-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .svc-ecosystem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   Page-level typography
+   ============================================================ */
+.svc-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.svc-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.svc-section-lead {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  max-width: 640px;
+  margin-top: 1rem;
+}
+
+.svc-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1288d3;
+}
+
+/* ============================================================
+   Responsive card grids
+   ============================================================ */
+.svc-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.svc-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.svc-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .svc-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .svc-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .svc-grid-3,
+  .svc-grid-2,
+  .svc-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Section spacing
+   ============================================================ */
+.svc-section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .svc-section {
+    padding: 3.5rem 0;
+  }
+}
+
+.svc-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.svc-faq-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+.svc-faq-intro { min-width: 0; }
+.svc-faq-character {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  margin-top: 2.5rem;
+  object-fit: contain;
+}
+.svc-faq-accordion {
+  min-width: 0;
+  padding-top: .25rem;
+}
+@media (max-width: 850px) {
+  .svc-faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .svc-faq-character { width: min(78vw, 340px); margin-inline: auto; }
+}
+
+@media (min-width: 640px) {
+  .svc-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .svc-container {
+    padding: 0 2rem;
+  }
+}
+
+/* ============================================================
+   Accessibility: reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .svc-card,
+  .svc-card::before,
+  .svc-card-icon,
+  .svc-card-title,
+  .svc-timeline-dot {
+    transition: none;
+  }
+
+  .svc-card:hover {
+    transform: none;
+  }
+
+  .svc-card:hover .svc-card-title {
+    transform: none;
+  }
+}
+/* Optional hero artwork used by service pages that need a supporting visual. */
+.svc-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.svc-hero-copy { min-width: 0; }
+.svc-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.svc-hero-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(18 136 211 / 20%);
+  filter: blur(70px);
+  content: "";
+}
+.svc-hero-visual img {
+  display: block;
+  width: min(100%, 540px);
+  max-height: 650px;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 42px rgb(0 0 0 / 28%));
+}
+@media (max-width: 850px) {
+  .svc-hero-layout { grid-template-columns: 1fr; }
+  .svc-hero-visual img { width: min(88vw, 470px); max-height: 540px; }
+}

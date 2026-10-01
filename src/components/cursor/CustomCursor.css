@@ -1,0 +1,32 @@
+/* A crisp sapphire arrow, rendered directly by the browser. */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor: url("/cursors/sapphire-arrow.svg") 4 3, auto;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"] {
+    cursor: text;
+  }
+
+  a,
+  button,
+  [role="button"],
+  summary,
+  select,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="submit"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+  }
+}

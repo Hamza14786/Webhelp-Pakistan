@@ -1,0 +1,99 @@
+.mega-menu-trigger { padding-block: 20px; margin-block: -20px; }
+
+.mega-menu-position {
+  left: 32px;
+  right: 32px;
+  padding-top: 4px;
+}
+
+.header-dropdown.mega-menu {
+  background: linear-gradient(125deg, #f5f9fc, #e8f0f5);
+  border: 1px solid #c7dce9;
+  border-top: 3px solid #00aaff;
+  border-radius: 22px;
+  box-shadow: 0 28px 70px #00101f66;
+  max-height: calc(100dvh - 105px);
+  overflow-y: auto;
+}
+
+.mega-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 25px 30px 20px;
+  border-bottom: 1px solid #d6e2ea;
+}
+
+.mega-menu .mega-menu-eyebrow {
+  color: #087aad;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  margin-bottom: 6px;
+}
+
+.mega-menu-heading h2 { color: #132f43; font-size: 23px; font-weight: 700; letter-spacing: -.035em; }
+.mega-menu .mega-menu-all { display: inline-flex; align-items: center; gap: 9px; color: #086b9a; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.mega-menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; padding: 16px 20px; }
+.mega-menu-card { display: flex; align-items: center; gap: 15px; padding: 15px 12px; border: 1px solid transparent; border-radius: 14px; }
+.mega-menu .mega-menu-icon { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 48px; height: 48px; border: 1px solid #c3dfea; border-radius: 14px; background: linear-gradient(145deg, #e1f3ff, #f6fcff); color: #0787c2; transition: background 180ms, color 180ms; }
+.mega-menu-copy { min-width: 0; }
+.mega-menu .mega-menu-title { display: block; font-size: 15px; font-weight: 650; line-height: 1.4; color: #172f40; }
+.mega-menu .mega-menu-description { display: block; color: #596c7b; font-size: 12px; line-height: 1.5; margin-top: 4px; }
+.mega-menu-arrow { margin-left: auto; flex-shrink: 0; color: #6b8ca0; transition: transform 180ms; }
+.mega-menu .mega-menu-card:hover, .mega-menu .mega-menu-card:focus-visible { background: #ffffff; border-color: #c5e0ef; box-shadow: 0 4px 14px #12344a08; }
+.mega-menu-card:hover .mega-menu-icon, .mega-menu-card:focus-visible .mega-menu-icon { background: #087fb6; color: white; border-color: #087fb6; }
+.mega-menu-card:hover .mega-menu-arrow { transform: translate(2px, -2px); }
+.mega-menu a:focus-visible { outline: 2px solid #008dca; outline-offset: 2px; }
+.mega-menu-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: #dae9f2; padding: 16px 30px; }
+.mega-menu-footer p { font-size: 13px; }
+.mega-menu-footer a { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
+#mobile-nav { max-height: calc(100dvh - 80px); overflow-y: auto; }
+
+/* A luminous studio banner above a collection of softly tinted cards. */
+.header-dropdown.mega-menu {
+  background: radial-gradient(ellipse at 0% 100%, #dcefff, transparent 55%), #f0f5f9;
+  border-top-color: #39c9ff;
+}
+.mega-menu-heading {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 65% 100%, #095578, transparent 65%), #072536;
+  border-bottom-color: #31718f;
+}
+.mega-menu-heading > :not(.mega-menu-orbit) { position: relative; z-index: 1; }
+.mega-menu-heading h2 { color: #fff; }
+.mega-menu .mega-menu-eyebrow { color: #7bdfff; }
+.mega-menu .mega-menu-all {
+  padding: 10px 15px;
+  color: #e4f8ff;
+  border: 1px solid #61c9f066;
+  background: #54caff14;
+  border-radius: 999px;
+  transition: background 180ms, border-color 180ms;
+}
+.mega-menu .mega-menu-all:hover { background: #54caff30; border-color: #61c9f0; }
+.mega-menu-orbit { position: absolute; width: 360px; height: 260px; right: 25%; top: -85px; transform: rotate(-25deg); pointer-events: none; }
+.mega-menu-orbit span { position: absolute; inset: 0; border: 1px solid #65d4ff38; border-radius: 50%; }
+.mega-menu-orbit span:nth-child(2) { inset: 27px; }
+.mega-menu-orbit span:nth-child(3) { inset: 54px; background: radial-gradient(ellipse, #30caff24, transparent 70%); }
+.mega-menu-orbit::before, .mega-menu-orbit::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #5adeff; box-shadow: 0 0 18px #32c6ff; top: 110px; left: -3px; }
+.mega-menu-orbit::after { top: 47px; left: auto; right: 75px; width: 5px; height: 5px; }
+.mega-menu-grid { background-image: radial-gradient(#477b9d15 1px, transparent 1px); background-size: 16px 16px; }
+.mega-menu-card { --menu-accent: #087fb6; --menu-tint: #e3f3ff; background: #ffffffb8; border-color: #d7e5ee; box-shadow: 0 2px 3px #153b5203; }
+.mega-menu-tone-1 { --menu-accent: #7856bb; --menu-tint: #f0eaff; }
+.mega-menu-tone-2 { --menu-accent: #078a82; --menu-tint: #def7f0; }
+.mega-menu-tone-3 { --menu-accent: #bb6921; --menu-tint: #fff0df; }
+.mega-menu .mega-menu-icon { color: var(--menu-accent); background: linear-gradient(145deg, var(--menu-tint), #fff); border-color: color-mix(in srgb, var(--menu-accent) 20%, white); border-radius: 15px 15px 15px 5px; box-shadow: 0 4px 8px color-mix(in srgb, var(--menu-accent) 9%, transparent); }
+.mega-menu .mega-menu-card:hover, .mega-menu .mega-menu-card:focus-visible { border-color: color-mix(in srgb, var(--menu-accent) 40%, white); background: linear-gradient(110deg, #fff 40%, var(--menu-tint)); box-shadow: 0 5px 16px #173a4d0d; }
+.mega-menu-card:hover .mega-menu-icon, .mega-menu-card:focus-visible .mega-menu-icon { background: var(--menu-accent); color: #fff; border-color: var(--menu-accent); }
+.mega-menu-arrow { padding: 5px; width: 28px; height: 28px; border: 1px solid #cfdee8; border-radius: 50%; }
+.mega-menu-footer { background: linear-gradient(90deg, #e0edf6, #eaf5fa); border-top: 1px solid #d0e1ec; }
+.mega-menu-footer p::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 9px; border-radius: 50%; background: #078a82; box-shadow: 0 0 0 4px #078a8212; }
+.mega-menu-footer a { color: #086b9a; }
+#mobile-nav .mega-menu-icon { display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; color: #00aaff; vertical-align: middle; }
+@media (prefers-reduced-motion: reduce) {
+  .mega-menu, .mega-menu .header-menu-link { animation: none; opacity: 1; }
+}

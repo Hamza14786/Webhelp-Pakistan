@@ -1,0 +1,419 @@
+/* ==========================================================================
+   VPS Hosting Enquiry Form - Premium Glassmorphic Component
+   Theme: Dark / Cyan (#031119, #25d2dd, #1288d3) Glassmorphism
+   ========================================================================== */
+
+.vps-enquiry-section {
+  position: relative;
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.vps-enquiry-container {
+  width: min(1000px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.vps-enquiry-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.vps-enquiry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  border: 1px solid rgba(37, 210, 221, 0.4);
+  background: rgba(6, 27, 36, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #25d2dd;
+  box-shadow: 0 0 20px rgba(37, 210, 221, 0.2);
+  margin-bottom: 20px;
+}
+
+.vps-enquiry-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+.vps-enquiry-lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #8ea3ad;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Single Large Premium Responsive Card
+   -------------------------------------------------------------------------- */
+.vps-enquiry-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 48px 44px;
+  background:
+    radial-gradient(ellipse at 85% 12%, rgba(37, 210, 221, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 88%, rgba(18, 136, 211, 0.08) 0%, transparent 55%),
+    rgba(6, 27, 36, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(37, 210, 221, 0.26);
+  box-shadow:
+    0 30px 80px -20px rgba(0, 0, 0, 0.75),
+    0 0 35px -5px rgba(37, 210, 221, 0.16);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.vps-enquiry-card:hover {
+  border-color: rgba(37, 210, 221, 0.45);
+  box-shadow:
+    0 35px 100px -20px rgba(0, 0, 0, 0.85),
+    0 0 45px -5px rgba(37, 210, 221, 0.24);
+}
+
+.vps-enquiry-card__glow-top {
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 210, 221, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vps-enquiry-card__glow-bottom {
+  position: absolute;
+  bottom: -90px;
+  left: -70px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(18, 136, 211, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Form Layout & Fields
+   -------------------------------------------------------------------------- */
+.vps-enquiry-form {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.vps-form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .vps-form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.vps-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vps-field-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #e1edf2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vps-required-star {
+  color: #25d2dd;
+  font-weight: 800;
+}
+
+.vps-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  background: rgba(3, 17, 25, 0.65);
+  border: 1px solid rgba(37, 210, 221, 0.22);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vps-input-wrapper:hover {
+  border-color: rgba(37, 210, 221, 0.4);
+  background: rgba(3, 17, 25, 0.85);
+}
+
+.vps-input-wrapper:focus-within {
+  border-color: #25d2dd;
+  background: rgba(3, 17, 25, 0.95);
+  box-shadow:
+    0 0 0 3px rgba(37, 210, 221, 0.15),
+    0 0 20px rgba(37, 210, 221, 0.22);
+}
+
+.vps-input-wrapper.has-error {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 12px rgba(248, 113, 113, 0.25) !important;
+}
+
+.vps-input-icon {
+  position: absolute;
+  left: 16px;
+  width: 19px;
+  height: 19px;
+  color: #25d2dd;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.vps-input-wrapper:focus-within .vps-input-icon {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.vps-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  font-size: 0.94rem;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+.vps-input::placeholder {
+  color: rgba(142, 163, 173, 0.55);
+}
+
+/* Multiline Textarea */
+.vps-textarea-wrapper {
+  align-items: flex-start;
+}
+
+.vps-textarea-wrapper .vps-input-icon {
+  top: 16px;
+}
+
+.vps-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px 16px 14px 48px;
+  font-size: 0.94rem;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.vps-textarea::placeholder {
+  color: rgba(142, 163, 173, 0.55);
+}
+
+/* Chips / Quick Presets */
+.vps-chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.vps-chips-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8ea3ad;
+  margin-right: 4px;
+}
+
+.vps-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(37, 210, 221, 0.08);
+  border: 1px solid rgba(37, 210, 221, 0.22);
+  color: #b5d5de;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vps-chip-btn:hover {
+  background: rgba(37, 210, 221, 0.18);
+  border-color: #25d2dd;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.vps-chip-btn.active {
+  background: #25d2dd;
+  border-color: #25d2dd;
+  color: #031119;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(37, 210, 221, 0.35);
+}
+
+/* Error message */
+.vps-field-error {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f87171;
+  margin: 2px 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Submit Action & Button
+   -------------------------------------------------------------------------- */
+.vps-submit-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .vps-submit-area {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.vps-enquiry-submit-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  background: #25d2dd;
+  border: 1px solid #25d2dd;
+  color: #031119;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow:
+    0 10px 25px -5px rgba(37, 210, 221, 0.38),
+    0 0 20px rgba(37, 210, 221, 0.22);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .vps-enquiry-submit-btn {
+    width: auto;
+  }
+}
+
+.vps-enquiry-submit-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #031119;
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 35px -5px rgba(37, 210, 221, 0.55),
+    0 0 35px rgba(37, 210, 221, 0.4);
+}
+
+.vps-enquiry-submit-btn:active {
+  transform: translateY(0);
+}
+
+.vps-submit-icon {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.2;
+  transition: transform 0.25s ease;
+}
+
+.vps-enquiry-submit-btn:hover .vps-submit-icon {
+  transform: translateX(3px) translateY(-1px);
+}
+
+.vps-enquiry-trust-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #8ea3ad;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsiveness
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .vps-enquiry-section {
+    padding: 60px 0 80px;
+  }
+
+  .vps-enquiry-card {
+    padding: 32px 20px;
+    border-radius: 20px;
+  }
+
+  .vps-input {
+    font-size: 0.9rem;
+    padding-left: 44px;
+  }
+
+  .vps-textarea {
+    font-size: 0.9rem;
+    padding-left: 44px;
+  }
+
+  .vps-input-icon {
+    left: 14px;
+    width: 17px;
+    height: 17px;
+  }
+
+  .vps-enquiry-trust-note {
+    font-size: 0.76rem;
+  }
+}

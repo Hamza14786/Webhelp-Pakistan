@@ -1,0 +1,66 @@
+/* 3D Interactive Hero Globe
+ * Compact, interactive, slowly spinning in endless loop with drag & hover interactivity
+ */
+
+.hero-globe-3d {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  right: max(2rem, calc((100vw - 1280px) / 2));
+  width: min(29vw, 360px);
+  aspect-ratio: 1;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 0 42px rgba(0, 170, 255, 0.28));
+  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-globe-3d:hover {
+  filter: drop-shadow(0 0 58px rgba(0, 205, 255, 0.42));
+}
+
+.hero-globe-3d:active {
+  cursor: grabbing;
+}
+
+.hero-globe-3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+}
+
+@media (max-width: 1200px) {
+  .hero-globe-3d {
+    right: 1.5rem;
+    width: min(31vw, 320px);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-globe-3d {
+    right: 1rem;
+    width: min(33vw, 290px);
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-globe-3d {
+    top: 68%;
+    right: -8vw;
+    width: min(62vw, 250px);
+    opacity: 0.38;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-globe-3d {
+    filter: drop-shadow(0 0 28px rgba(0, 150, 255, 0.2));
+  }
+}

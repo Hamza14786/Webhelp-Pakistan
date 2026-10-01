@@ -1,0 +1,662 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system: black + dark blue agency theme.
+ * All colors use oklch and are exposed as semantic Tailwind tokens.
+ */
+
+@theme inline {
+  --container-7xl: 90rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-turquoise: var(--turquoise);
+  --color-turquoise-soft: var(--turquoise-soft);
+  --color-ink: var(--ink);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: #031119;
+  --foreground: oklch(0.96 0.008 240);
+  --ink: #031119;
+
+  --surface: oklch(0.14 0.052 258);
+  --surface-2: oklch(0.19 0.07 257);
+
+  --card: oklch(0.14 0.052 258);
+  --card-foreground: oklch(0.96 0.008 240);
+  --popover: oklch(0.115 0.04 258);
+  --popover-foreground: oklch(0.96 0.008 240);
+
+  --primary: #1288d3;
+  --primary-foreground: oklch(0.99 0.004 250);
+  --turquoise: #1288d3;
+  --turquoise-soft: oklch(0.78 0.13 248);
+
+  --secondary: oklch(0.19 0.07 257);
+  --secondary-foreground: oklch(0.96 0.008 240);
+  --muted: oklch(0.17 0.045 257);
+  --muted-foreground: oklch(0.72 0.035 245);
+  --accent: oklch(0.48 0.18 260);
+  --accent-foreground: oklch(0.98 0.005 240);
+
+  --destructive: oklch(0.62 0.21 22);
+  --destructive-foreground: oklch(0.98 0.005 240);
+
+  --border: oklch(0.42 0.11 255 / 42%);
+  --input: oklch(0.42 0.11 255 / 55%);
+  --ring: #1288d3;
+
+  --chart-1: oklch(0.68 0.2 255);
+  --chart-2: oklch(0.58 0.19 265);
+  --chart-3: oklch(0.74 0.13 240);
+  --chart-4: oklch(0.48 0.16 270);
+  --chart-5: oklch(0.82 0.09 245);
+
+  --sidebar: oklch(0.105 0.035 258);
+  --sidebar-foreground: oklch(0.96 0.008 240);
+  --sidebar-primary: #1288d3;
+  --sidebar-primary-foreground: oklch(0.99 0.004 250);
+  --sidebar-accent: oklch(0.19 0.07 257);
+  --sidebar-accent-foreground: oklch(0.96 0.008 240);
+  --sidebar-border: oklch(0.42 0.11 255 / 42%);
+  --sidebar-ring: #1288d3;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--turquoise);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--turquoise);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-dropdown,
+  .header-menu-link {
+    animation: none;
+    opacity: 1;
+  }
+
+  .header-menu-link,
+  .header-menu-link::after {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@utility glow-turquoise {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--turquoise) 25%, transparent),
+    0 20px 60px -20px color-mix(in oklab, var(--turquoise) 45%, transparent);
+}
+
+@utility text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--turquoise-soft),
+    color-mix(in oklab, var(--accent) 80%, white)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility panel {
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--surface) 92%, transparent),
+      color-mix(in oklab, var(--ink) 70%, transparent)
+    );
+  border: 1px solid var(--color-border);
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--turquoise) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--turquoise) 8%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@keyframes header-dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes header-menu-item-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(-8px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.header-dropdown {
+  transform-origin: top left;
+  animation: header-dropdown-enter 260ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.header-menu-link {
+  position: relative;
+  opacity: 0;
+  transition:
+    color 260ms ease,
+    background-color 260ms ease,
+    transform 260ms ease;
+  animation: header-menu-item-enter 300ms cubic-bezier(0.2, 0.75, 0.2, 1) forwards;
+}
+
+.header-menu-link::after {
+  position: absolute;
+  right: 12px;
+  bottom: 7px;
+  left: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms ease;
+  content: "";
+}
+
+.header-menu-link:hover,
+.header-menu-link:focus-visible {
+  color: var(--primary);
+  background: color-mix(in oklab, var(--secondary) 75%, transparent);
+  transform: translateX(4px);
+}
+
+.header-menu-link:hover span,
+.header-menu-link:focus-visible span {
+  color: var(--primary);
+}
+
+.header-menu-link:hover::after,
+.header-menu-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.panel {
+  --card-border-angle: 0deg;
+  border-width: 3px;
+  border-color: color-mix(in oklab, var(--primary) 68%, transparent);
+}
+
+@property --card-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes card-border-orbit {
+  to {
+    --card-border-angle: 360deg;
+  }
+}
+
+.panel:hover {
+  border-color: transparent;
+  background:
+    linear-gradient(160deg, #0a2130, #031119) padding-box,
+    conic-gradient(
+        from var(--card-border-angle),
+        rgb(18 136 211 / 48%) 0deg,
+        rgb(18 136 211 / 48%) 245deg,
+        #00aaff 292deg,
+        #b9eaff 320deg,
+        #008cff 342deg,
+        rgb(18 136 211 / 48%) 360deg
+      )
+      border-box;
+  animation: card-border-orbit 1.8s linear infinite;
+}
+
+/* Continuous ambient lighting for page content below each route hero. */
+@keyframes ambient-wave-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-64px, 42px, 0) rotate(-3deg) scale(1.1);
+  }
+}
+
+@keyframes ambient-wave-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(7deg) scale(1.04);
+  }
+
+  50% {
+    transform: translate3d(58px, -36px, 0) rotate(2deg) scale(0.96);
+  }
+}
+
+@keyframes ambient-wave-pass {
+  0% {
+    transform: translate3d(-135%, -12%, 0) rotate(-9deg) scaleX(0.9);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.72;
+  }
+
+  55% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate3d(285%, 16%, 0) rotate(-3deg) scaleX(1.15);
+    opacity: 0;
+  }
+}
+
+:is(
+    #main > section:not([data-site-hero]),
+    #main > div > section:not([data-site-hero]),
+    #main > article,
+    #main > div:not(:has([data-site-hero])),
+    footer
+  ) {
+  position: relative;
+  isolation: isolate;
+}
+
+:is(
+    #main > section:not([data-site-hero]),
+    #main > div > section:not([data-site-hero]),
+    #main > article,
+    #main > div:not(:has([data-site-hero])),
+    footer
+  ) > * {
+  position: relative;
+  z-index: 1;
+}
+
+:is(
+    #main > section:not([data-site-hero]),
+    #main > div > section:not([data-site-hero]),
+    #main > article,
+    #main > div:not(:has([data-site-hero])),
+    footer
+  )::before,
+:is(
+    #main > section:not([data-site-hero]),
+    #main > div > section:not([data-site-hero]),
+    #main > article,
+    #main > div:not(:has([data-site-hero])),
+    footer
+  )::after {
+  position: absolute;
+  z-index: 0;
+  width: clamp(34rem, 58vw, 72rem);
+  height: clamp(22rem, 38vw, 48rem);
+  border-radius: 38% 62% 68% 32% / 44% 38% 62% 56%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0 170 255 / 22%) 0%,
+    rgb(0 140 255 / 13%) 32%,
+    rgb(0 102 255 / 6%) 52%,
+    transparent 72%
+  );
+  content: none;
+  filter: blur(60px);
+  opacity: 0.44;
+  pointer-events: none;
+  will-change: transform;
+}
+
+:is(#main > section, #main > div > section):not([data-site-hero]):nth-of-type(3n + 2)::before,
+#main > article::before {
+  top: -18%;
+  right: -24%;
+  animation: ambient-wave-drift-a 12s ease-in-out infinite;
+  content: "";
+}
+
+:is(#main > section, #main > div > section):not([data-site-hero]):nth-of-type(3n)::after,
+#main > article::after {
+  bottom: -20%;
+  left: -28%;
+  animation: ambient-wave-drift-b 14s ease-in-out -4s infinite;
+  content: "";
+}
+
+:is(#main > section, #main > div > section):not([data-site-hero]):nth-of-type(4n + 1)::before {
+  top: 18%;
+  left: 24%;
+  width: clamp(28rem, 48vw, 60rem);
+  height: clamp(18rem, 32vw, 40rem);
+  opacity: 0.3;
+  animation: ambient-wave-drift-b 15s ease-in-out -7s infinite;
+  content: "";
+}
+
+footer {
+  overflow: hidden;
+}
+
+footer::after {
+  right: -25%;
+  bottom: -75%;
+  animation: ambient-wave-drift-a 13s ease-in-out -5s infinite;
+  content: "";
+}
+
+/* A bright light wave slowly crosses every content section. */
+:is(
+    #main > section:not([data-site-hero]),
+    #main > div > section:not([data-site-hero]),
+    #main > article,
+    #main > div:not(:has([data-site-hero])),
+    footer
+  )::before {
+  top: 8%;
+  right: auto;
+  bottom: auto;
+  left: -68%;
+  width: min(68rem, 92vw);
+  height: 84%;
+  border-radius: 18% 82% 22% 78% / 50% 42% 58% 50%;
+  background: linear-gradient(
+    112deg,
+    transparent 4%,
+    rgb(0 102 255 / 12%) 24%,
+    rgb(0 140 255 / 48%) 48%,
+    rgb(0 170 255 / 28%) 62%,
+    transparent 84%
+  );
+  content: "";
+  filter: blur(48px);
+  animation: ambient-wave-pass 6s ease-in-out infinite;
+}
+
+:is(#main > section, #main > div > section):not([data-site-hero]):nth-of-type(3n)::before {
+  animation-delay: -1s;
+}
+
+:is(#main > section, #main > div > section):not([data-site-hero]):nth-of-type(3n + 1)::before {
+  animation-delay: -2s;
+}
+
+@media (max-width: 640px) {
+  :is(
+      #main > section:not([data-site-hero]),
+      #main > div > section:not([data-site-hero]),
+      #main > article,
+      #main > div:not(:has([data-site-hero])),
+      footer
+    )::before,
+  :is(
+      #main > section:not([data-site-hero]),
+      #main > div > section:not([data-site-hero]),
+      #main > article,
+      #main > div:not(:has([data-site-hero])),
+      footer
+    )::after {
+    width: 30rem;
+    height: 20rem;
+    filter: blur(42px);
+    opacity: 0.22;
+  }
+
+  :is(#main > section, #main > div > section):not([data-site-hero])::before,
+  :is(#main > section, #main > div > section):not([data-site-hero])::after,
+  #main > article::before,
+  #main > article::after,
+  footer::after {
+    animation-duration: 6s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel:hover {
+    animation: none;
+    border-color: var(--primary);
+  }
+
+  :is(
+      #main > section:not([data-site-hero]),
+      #main > div > section:not([data-site-hero]),
+      #main > article,
+      #main > div:not(:has([data-site-hero])),
+      footer
+    )::before,
+  :is(
+      #main > section:not([data-site-hero]),
+      #main > div > section:not([data-site-hero]),
+      #main > article,
+      #main > div:not(:has([data-site-hero])),
+      footer
+    )::after {
+    animation: none;
+    opacity: 0.12;
+  }
+}
+
+/* Light neutral navigation dropdowns. */
+.header-dropdown {
+  background: hsl(40, 5%, 89%);
+  color: #17232b;
+  border-color: rgba(23, 35, 43, 0.15);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.header-dropdown a,
+.header-dropdown span,
+.header-dropdown p {
+  color: #17232b;
+}
+
+.header-dropdown .header-menu-link:hover {
+  background-color: rgba(23, 35, 43, 0.08);
+}
+
+select option {
+  background-color: #25d2dd !important;
+  color: #000000 !important;
+}
+
+.contact-form select option {
+  background-color: rgb(204, 204, 204) !important;
+  color: #202020 !important;
+}
+
+/* Shared interior-page hero styling, matching the portfolio palette. */
+.subpage-hero {
+  text-align: center;
+}
+
+.subpage-hero h1 {
+  margin-inline: auto;
+  max-width: 1100px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.subpage-hero p {
+  margin-inline: auto;
+}
+
+.subpage-hero-highlight {
+  background: linear-gradient(135deg, #00aaff 20%, #70d7ff 60%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subpage-hero .svc-hero-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.subpage-hero .flex.flex-wrap {
+  justify-content: center;
+}
+
+/* Site-Wide 3D Celestial Background Transparency & Interactivity */
+html,
+body {
+  background-color: #031119 !important;
+}
+
+#main {
+  position: relative;
+  z-index: 2;
+  background-color: transparent !important;
+}
+
+/* Make dark page sections glassmorphic translucent so the 3D celestial canvas shines through */
+section[class*="bg-[var(--ink)]"],
+section.bg-\[var\(--ink\)\],
+section.bg-ink,
+.bg-\[var\(--ink\)\],
+div[class*="bg-background"],
+section[data-site-hero] {
+  background-color: transparent !important;
+}
+
+section[data-site-hero] > div.bg-gradient-to-b {
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 17, 25, 0.1) 0%,
+    rgba(3, 17, 25, 0.45) 60%,
+    rgba(3, 17, 25, 0.65) 100%
+  ) !important;
+}
+
+/* Premium translucent glass panels for cards, bento items, and service blocks */
+.panel {
+  background-color: rgba(6, 27, 36, 0.6) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(18, 136, 211, 0.2) !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.panel:hover {
+  border-color: rgba(0, 170, 255, 0.5) !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(18, 136, 211, 0.2) !important;
+}
+
+.service-card {
+  background-color: rgba(6, 27, 36, 0.6) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(18, 136, 211, 0.2) !important;
+}
+
+.service-card:hover {
+  background-color: rgba(8, 33, 44, 0.8) !important;
+  border-color: rgba(0, 170, 255, 0.5) !important;
+}
+
+article[data-card] {
+  background-color: rgba(6, 27, 36, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(18, 136, 211, 0.2) !important;
+}
+
+/* GSAP Magnetic Button Optimization (prevents CSS transform fighting GSAP) */
+[data-magnetic="true"] {
+  will-change: transform;
+}
