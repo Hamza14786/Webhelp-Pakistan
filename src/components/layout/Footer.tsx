@@ -66,20 +66,19 @@ export function Footer() {
         </FooterCol>
 
         <FooterCol title="Products" bullets>
-          {products.map((p) => {
-            const isVps = p.slug === "business-vps-hosting";
-            return (
-              <li key={p.slug}>
-                <Link
-                  to={isVps ? "/services/$slug" : "/products/$slug"}
-                  params={{ slug: isVps ? "cloud-managed-vps-hosting" : p.slug }}
-                  className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {p.name}
-                </Link>
-              </li>
-            );
-          })}
+          {products.slice(0, 5).map((product) => (
+            <li key={product.slug}>
+              <ProductFooterLink product={product} />
+            </li>
+          ))}
+          <li className="list-none pt-2">
+            <Link
+              to="/products/"
+              className="inline-flex items-center rounded-full border border-primary/50 px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary"
+            >
+              Explore more products
+            </Link>
+          </li>
         </FooterCol>
 
         <FooterCol title="Company">
@@ -135,6 +134,19 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function ProductFooterLink({ product }: { product: (typeof products)[number] }) {
+  const isVps = product.slug === "business-vps-hosting";
+  return (
+    <Link
+      to={isVps ? "/services/$slug" : "/products/$slug"}
+      params={{ slug: isVps ? "cloud-managed-vps-hosting" : product.slug }}
+      className="text-muted-foreground transition-colors hover:text-foreground"
+    >
+      {product.name}
+    </Link>
   );
 }
 

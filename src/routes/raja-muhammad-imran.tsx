@@ -14,7 +14,7 @@ const title = "Raja Muhammad Imran | WebHelp Pakistan";
 const description =
   "Meet Raja Muhammad Imran, Business Development Manager for Qatar at WebHelp Pakistan.";
 
-export const Route = createFileRoute("/team/raja-muhammad-imran")({
+export const Route = createFileRoute("/raja-muhammad-imran")({
   head: () => ({
     meta: [
       { title },
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/team/raja-muhammad-imran")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
     ],
+    links: [{ rel: "canonical", href: "https://webhelp.pk/raja-muhammad-imran/" }],
   }),
   component: RajaMuhammadImranProfile,
 });

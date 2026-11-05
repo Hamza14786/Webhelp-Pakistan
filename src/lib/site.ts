@@ -547,7 +547,7 @@ export const team = [
     name: "Saqib Rasheed",
     role: "CEO & FOUNDER",
     image: "/images/team/saqib-rasheed.webp",
-    profile: "/team/saqib-rasheed",
+    profile: "/saqib-rasheed",
   },
   {
     number: "02",
@@ -555,7 +555,7 @@ export const team = [
     name: "Umaira Ashfaq",
     role: "MANAGING DIRECTOR",
     image: "/images/team/umaira-ashfaq.webp",
-    profile: "/team/umaira-ashfaq",
+    profile: "/umaira-ashfaq",
   },
   {
     number: "03",
@@ -563,7 +563,7 @@ export const team = [
     name: "Muhammad Bilal Raja",
     role: "DIRECTOR BUSINESS DEVELOPMENT",
     image: "/images/team/muhammad-bilal-raja.jpg",
-    profile: "/team/muhammad-bilal-raja",
+    profile: "/Muhammad-Bilal",
   },
   {
     number: "04",
@@ -571,7 +571,7 @@ export const team = [
     name: "Sumayya Rasheed",
     role: "ODOO & FINANCE MANAGER",
     image: "/images/team/sumayya-rasheed.webp",
-    profile: "/team/sumayya-rasheed",
+    profile: "/sumayya-rasheed",
   },
   {
     number: "05",
@@ -579,7 +579,7 @@ export const team = [
     name: "Hamza Malik",
     role: "IT MANAGER",
     image: "/images/team/hamza-malik.webp",
-    profile: "/team/hamza-malik",
+    profile: "/Hamza",
   },
   {
     number: "06",
@@ -587,7 +587,7 @@ export const team = [
     name: "Riaz Ali Shah",
     role: "DIRECTOR SALES & MARKETING",
     image: "/images/team/riaz-shah.jpeg",
-    profile: "/team/riaz-shah",
+    profile: "/riaz-shah",
   },
   {
     number: "07",
@@ -595,7 +595,7 @@ export const team = [
     name: "Raja Jahangir",
     role: "BUSINESS DEVELOPMENT MANAGER - UAE",
     image: "/images/team/raja-jahangir.png",
-    profile: "/team/raja-jahangir",
+    profile: "/raja-jahangir",
   },
   {
     number: "08",
@@ -603,7 +603,7 @@ export const team = [
     name: "Raja Muhammad Imran",
     role: "BUSINESS DEVELOPMENT MANAGER - QATAR",
     image: "/images/team/raja-muhammad-imran.png",
-    profile: "/team/raja-muhammad-imran",
+    profile: "/raja-muhammad-imran",
   },
   {
     number: "09",
@@ -611,7 +611,7 @@ export const team = [
     name: "Umer Shahbaz",
     role: "BUSINESS DEVELOPMENT EXECUTIVE - KSA (KINGDOM OF SAUDI ARABIA)",
     image: "/images/team/umer-shahbaz.jpeg",
-    profile: "/team/umer-shahbaz",
+    profile: "/umer-shahbaz",
   },
   {
     number: "10",
@@ -619,7 +619,7 @@ export const team = [
     name: "Hasnat Ali",
     role: "SENIOR WEB DEVELOPER",
     image: "/images/team/hasnat-ali.webp",
-    profile: "/team/hasnat-ali",
+    profile: "/hasnat-ali",
   },
   {
     number: "11",

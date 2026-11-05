@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import ArrowLeft from "lucide-react/dist/esm/icons/arrow-left";
 import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 import BriefcaseBusiness from "lucide-react/dist/esm/icons/briefcase-business";
@@ -19,7 +19,7 @@ type LeadershipProfile = {
   skills: string[];
 };
 
-const profiles: Record<string, LeadershipProfile> = {
+export const profiles: Record<string, LeadershipProfile> = {
   "saqib-rasheed": {
     name: "Saqib Rasheed",
     role: "CEO & Founder",
@@ -155,16 +155,21 @@ const profiles: Record<string, LeadershipProfile> = {
 export const Route = createFileRoute("/team/$slug")({
   beforeLoad: ({ params }) => {
     if (!profiles[params.slug]) throw notFound();
+    throw redirect({ to: `/${params.slug}`, statusCode: 301 });
   },
   head: ({ params }) => {
     const profile = profiles[params.slug];
     return profile ? { meta: [{ title: `${profile.name} | WebHelp Pakistan` }, { name: "description", content: profile.intro }] } : {};
   },
-  component: LeadershipProfilePage,
+  component: TeamLeadershipProfilePage,
 });
 
-function LeadershipProfilePage() {
+function TeamLeadershipProfilePage() {
   const { slug } = Route.useParams();
+  return <LeadershipProfilePage slug={slug} />;
+}
+
+export function LeadershipProfilePage({ slug }: { slug: string }) {
   const profile = profiles[slug]!;
   return (
     <>

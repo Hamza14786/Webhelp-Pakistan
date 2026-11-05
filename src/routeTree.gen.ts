@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FlowChartRouteImport } from './routes/flow-chart'
@@ -18,6 +19,8 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as OurProcessRouteImport } from './routes/our-process'
 import { Route as OurprocessRouteImport } from './routes/ourprocess'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RajaMuhammadImranRouteImport } from './routes/raja-muhammad-imran'
+import { Route as SaqibRasheedRouteImport } from './routes/saqib-rasheed'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
@@ -25,11 +28,15 @@ import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as TeamSlugRouteImport } from './routes/team.$slug'
-import { Route as TeamRajaMuhammadImranRouteImport } from './routes/team.raja-muhammad-imran'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SlugRoute = SlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -72,6 +79,16 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RajaMuhammadImranRoute = RajaMuhammadImranRouteImport.update({
+  id: '/raja-muhammad-imran',
+  path: '/raja-muhammad-imran',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SaqibRasheedRoute = SaqibRasheedRouteImport.update({
+  id: '/saqib-rasheed',
+  path: '/saqib-rasheed',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -107,14 +124,10 @@ const TeamSlugRoute = TeamSlugRouteImport.update({
   path: '/team/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamRajaMuhammadImranRoute = TeamRajaMuhammadImranRouteImport.update({
-  id: '/team/raja-muhammad-imran',
-  path: '/team/raja-muhammad-imran',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/flow-chart': typeof FlowChartRoute
@@ -123,17 +136,19 @@ export interface FileRoutesByFullPath {
   '/our-process': typeof OurProcessRoute
   '/ourprocess': typeof OurprocessRoute
   '/privacy': typeof PrivacyRoute
+  '/raja-muhammad-imran': typeof RajaMuhammadImranRoute
+  '/saqib-rasheed': typeof SaqibRasheedRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/team/$slug': typeof TeamSlugRoute
-  '/team/raja-muhammad-imran': typeof TeamRajaMuhammadImranRoute
   '/products/': typeof ProductsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/flow-chart': typeof FlowChartRoute
@@ -142,18 +157,20 @@ export interface FileRoutesByTo {
   '/our-process': typeof OurProcessRoute
   '/ourprocess': typeof OurprocessRoute
   '/privacy': typeof PrivacyRoute
+  '/raja-muhammad-imran': typeof RajaMuhammadImranRoute
+  '/saqib-rasheed': typeof SaqibRasheedRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/team/$slug': typeof TeamSlugRoute
-  '/team/raja-muhammad-imran': typeof TeamRajaMuhammadImranRoute
   '/products': typeof ProductsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/flow-chart': typeof FlowChartRoute
@@ -162,12 +179,13 @@ export interface FileRoutesById {
   '/our-process': typeof OurProcessRoute
   '/ourprocess': typeof OurprocessRoute
   '/privacy': typeof PrivacyRoute
+  '/raja-muhammad-imran': typeof RajaMuhammadImranRoute
+  '/saqib-rasheed': typeof SaqibRasheedRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/team/$slug': typeof TeamSlugRoute
-  '/team/raja-muhammad-imran': typeof TeamRajaMuhammadImranRoute
   '/products/': typeof ProductsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -175,6 +193,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$slug'
     | '/about'
     | '/contact'
     | '/flow-chart'
@@ -183,17 +202,19 @@ export interface FileRouteTypes {
     | '/our-process'
     | '/ourprocess'
     | '/privacy'
+    | '/raja-muhammad-imran'
+    | '/saqib-rasheed'
     | '/terms'
     | '/work'
     | '/products/$slug'
     | '/services/$slug'
     | '/team/$slug'
-    | '/team/raja-muhammad-imran'
     | '/products/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$slug'
     | '/about'
     | '/contact'
     | '/flow-chart'
@@ -202,17 +223,19 @@ export interface FileRouteTypes {
     | '/our-process'
     | '/ourprocess'
     | '/privacy'
+    | '/raja-muhammad-imran'
+    | '/saqib-rasheed'
     | '/terms'
     | '/work'
     | '/products/$slug'
     | '/services/$slug'
     | '/team/$slug'
-    | '/team/raja-muhammad-imran'
     | '/products'
     | '/services'
   id:
     | '__root__'
     | '/'
+    | '/$slug'
     | '/about'
     | '/contact'
     | '/flow-chart'
@@ -221,18 +244,20 @@ export interface FileRouteTypes {
     | '/our-process'
     | '/ourprocess'
     | '/privacy'
+    | '/raja-muhammad-imran'
+    | '/saqib-rasheed'
     | '/terms'
     | '/work'
     | '/products/$slug'
     | '/services/$slug'
     | '/team/$slug'
-    | '/team/raja-muhammad-imran'
     | '/products/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SlugRoute: typeof SlugRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FlowChartRoute: typeof FlowChartRoute
@@ -241,12 +266,13 @@ export interface RootRouteChildren {
   OurProcessRoute: typeof OurProcessRoute
   OurprocessRoute: typeof OurprocessRoute
   PrivacyRoute: typeof PrivacyRoute
+  RajaMuhammadImranRoute: typeof RajaMuhammadImranRoute
+  SaqibRasheedRoute: typeof SaqibRasheedRoute
   TermsRoute: typeof TermsRoute
   WorkRoute: typeof WorkRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   TeamSlugRoute: typeof TeamSlugRoute
-  TeamRajaMuhammadImranRoute: typeof TeamRajaMuhammadImranRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -258,6 +284,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$slug': {
+      id: '/$slug'
+      path: '/$slug'
+      fullPath: '/$slug'
+      preLoaderRoute: typeof SlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -316,6 +349,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/raja-muhammad-imran': {
+      id: '/raja-muhammad-imran'
+      path: '/raja-muhammad-imran'
+      fullPath: '/raja-muhammad-imran'
+      preLoaderRoute: typeof RajaMuhammadImranRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saqib-rasheed': {
+      id: '/saqib-rasheed'
+      path: '/saqib-rasheed'
+      fullPath: '/saqib-rasheed'
+      preLoaderRoute: typeof SaqibRasheedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -365,18 +412,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team/raja-muhammad-imran': {
-      id: '/team/raja-muhammad-imran'
-      path: '/team/raja-muhammad-imran'
-      fullPath: '/team/raja-muhammad-imran'
-      preLoaderRoute: typeof TeamRajaMuhammadImranRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SlugRoute: SlugRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FlowChartRoute: FlowChartRoute,
@@ -385,12 +426,13 @@ const rootRouteChildren: RootRouteChildren = {
   OurProcessRoute: OurProcessRoute,
   OurprocessRoute: OurprocessRoute,
   PrivacyRoute: PrivacyRoute,
+  RajaMuhammadImranRoute: RajaMuhammadImranRoute,
+  SaqibRasheedRoute: SaqibRasheedRoute,
   TermsRoute: TermsRoute,
   WorkRoute: WorkRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   TeamSlugRoute: TeamSlugRoute,
-  TeamRajaMuhammadImranRoute: TeamRajaMuhammadImranRoute,
   ProductsIndexRoute: ProductsIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "build:static": "vite build && node scratch/generate_static.mjs",
+    "build:static": "npm run build && node scripts/generate-static.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
